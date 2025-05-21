@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Naawi-Oodena</title>
+  <link rel="stylesheet" href="bro.css">
+  <style>
+    .video-section-sigma {
+    height: 55vh; /* takes up 55% of the viewing height and hides the overflow, so u see the full video*/
+    overflow: hidden;
+    }
+
+  .video-section-sigma video { 
+    width: 100%; /* the video takes up 100% of its height and width */
+    height: 100%;
+    -o-object-fit: cover; /* makes so the video takes up full div*/
+    object-fit: cover;
+    -webkit-filter: brightness(0.4); /* adds the filter that lowers the brightness of the video*/
+    filter: brightness(0.4);
+    }
+
+
+
+
+  .offerings {
+    display: -webkit-box; /* makes this a flexbox and sets the sets the directiom to column so its a column*/
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /*takes up 100% of the page with no margin and sum padding*/
+    margin: 0;
+    padding: 6rem 0 4rem;
+    }
+
+  .offer {
+    display: -webkit-box;
+    display: -ms-flexbox; /*makes this a flexbox*/
+    display: flex;
+    background: var(--green-background);
+    color: var(--text-color); /* sets the colors*/
+    margin: 0 auto 2rem; /* sets themargin and hides the overflow*/
+    overflow: hidden;
+    -webkit-transition: transform 0.6s ease; /* adds transitons*/
+    transition: transform 0.6s ease;
+    max-width: 90rem; /*makes it take up a max width of 90rem and makes the content wrap*/
+    flex-wrap: wrap;
+  
+    }
+
+  .offer:hover { /* makes it grow when hovered on*/
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    }
+
+
+    .offer img { /* makes the image take up 40% of the space and set it so that it doesnt get cropped and u can see full img*/
+    width: 40%;
+    -o-object-fit: cover;
+      object-fit: cover;
+    }
+
+  .offer .offer-info {
+    width: 60%; /* sets the width to be 60% adds some padding and makes it a flex0box*/
+    padding: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column; /*makes the flex direction to be a column and center the content*/
+    justify-content: center;
+    }
+
+
+
+    
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content"> <!--the header is the same as the other pages and is explained on index.html-->
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+        <h1><a href="index.html" class="main-heading">Naawi-Oodena</a></h1>
+      </div>
+      <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="residential-comericial.html">Residential/Comercial</a></li>
+          <li><a href="what-we-offer.html">What We Offer</a></li>
+          <li><a href="contact-us.html">Contact us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section aria-label="aerial video of trees"  class="video-section-sigma"> <!--another video, everything else is the same as the other videos in the page-->
+    <video autoplay muted loop>
+      <source src="images/park-video.mp4">
+    </video>
+    
+  </section>
+
+  <main class="offerings"> 
+    <div class="offer">  <!--this is what we have the info and image in, this is 1 of the like the containers, there are 3 and they basically the same, include imag, h2 and paragraph-->
+      <img src="images/community-spaces.png" alt="this is a image of the one of the comunity spaces in naawi-oodena">
+      <div class="offer-info">
+        <h2>Community Spaces</h2>
+        <p>Every neighbourhood in Naawi Oodena is woven together by publicly accessible parks, plazas, mews, and courtyards.
+          These spaces are designed for year round use, featuring sheltered seating, evening lighting, and flexible hardscapes for markets, ceremonies, or spontaneous recreation.
+        </p>
+      </div>
+    </div>
+    <div class="offer">
+      <div class="offer-info">
+        <h2>Cultural Campus & Education</h2>
+        <p>Naawi-Oodena Cultural Campus is a space for celebration, learning and gathering around Indigenous cultures. It has a public library, a museum, an art gallery, a public performance space, and the Treaty One Nation Governance Center. Classrooms, design studios and language revitalization zones ring a central plaza that’s for community gatherings and ceremonies. A conference center, cafes and cramped stores animate its ground floor; artists and students have been accommodated in apartments built above it. Parking is out of sight of the campus, keeping it open and welcoming, and the campus is networked with bike paths and accommodating walkways.</p>
+      </div>
+      <img src="images/culttural-campus-and-education.png" alt="this is an image of naawi oodenas state of the art cultural campus and education campus yuh">
+      
+    </div>
+    <div class="offer">
+      <img src="images/park-image-2.png" alt="this is an image of a park loated in naawi oodena with seating, a waklway and a field">
+      <div class="offer-info">
+        <h2>Sports & Recreation</h2>
+        <p>Naawi-Oodena is A vibrant,year-round recreational community of community, culture and wellness.
+        The large outdoor fields are used for baseball, soccer, and for cultural events, and the powwow arbour is used for festivals and ceremonies.
+        Winter brings landscape changes, with nearby hills open for sledding and snow play and stormwater ponds converting to skating rinks.
+        The entire area, linked by paths forcycling and walking, is designed to promote movement, socializing and even celebration throughout the year.</p>
+      </div>
+    </div>
+  </main>
+  <!--everything else here is the same as the rest of the website-->
+  <footer>
+    &copy; 2025 Nihal - All rights reserved, Images used on this website were generated using ChatGPT. All Info Displayed was Sourced From <a class="donwload" href="Kapyong-Barracks-Master-Plan.pdf" download="Kapyong-Barracks-Master-Plan.pdf">Kapyong Barracks Master Plan Pdf</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => navMenu.classList.toggle('show'));
+  </script>
+</body>
+</html>

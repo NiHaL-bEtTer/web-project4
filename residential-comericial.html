@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naawi-Oodena</title>
+  <link rel="stylesheet" href="bro.css" /> <!--links the external stylesheet-->
+  <style>
+    .building-grid { /*this is the styles for the grid, it uses the vendor prefixes*/
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (300px)[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); /* so this basically means it will create as many columns as it can fit, the minimum width for the column is 300px/18.75rem and will take up 1fr otherwise*/
+    -ms-grid-row-gap: 2rem;
+    -ms-grid-column-gap: 2rem; /* then the rest basically adds gap to the different articles and paddding and margin of the grid,*/
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin: 2rem;
+  }
+
+  .buildings-gon-built { /* here is basically sets the colors of the articeles, makes the edges round, hides any unnessesary overflow*/
+    background: var(--green-background);
+    color: var(--text-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    -webkit-transition: -webkit-transform 0.3s ease; /* here we add some transitions*/
+    transition: transform 0.3s ease;
+    display: -webkit-box;
+    display: -ms-flexbox; /*basically makes the article a flex box and makes the flex direction column, making the article a coloumn instaead of the default which is row*/
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .buildings-gon-built img { /*this basically makes it so that the image takes up 100% of the width and gives it a liquid height and make ssure the pic is not cropped with the obj fit cover */
+    width: 100%;
+    height: 12.5rem;
+    object-fit: cover;
+  }
+
+  .buildings-gon-built .building-content {
+    padding: 1rem; /* basicaly adds some padding to the info/content inside the article and sets flex grow to 1 using the prefix vendors*/
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+
+  .buildings-gon-built h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .buildings-gon-built:hover { /* this basically makes it so when u hover on the article it grows*/
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+  }
+
+    
+  </style>
+</head>
+<body>
+  <header> <!--this is the same as index.html for the header-->
+    <div class="header-content">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Naawi-Oodena logo"></a>
+        <a href="index.html"><h1 class="nav-heading">Naawi-Oodena</h1></a>
+      </div>
+      <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="residential-comericial.html">Residential/Comercial</a></li>
+          <li><a href="what-we-offer.html">What We Offer</a></li>
+          <li><a href="contact-us.html">contact us</a></li> 
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section> <!--this th section for the residential living, includes a h2 and a paragrapjh-->
+      <h2>Residential Living</h2>
+      <p class="section-description">
+        Thoughtfully designed low- and medium-density homes to support sustainable and community-first living.
+      </p>
+
+      <div class="building-grid"> <!-- this is the grid that contains the differnt type of buildings-->
+        
+
+        <article class="buildings-gon-built"> <!--this is the article that contains the info about about a specific bulding, contains an img and info-->
+          <img src="images/apartments.png" alt="this is an image of naawi oodenas mid rise apartments, the image features the apartments and walking trails">
+          <div class="building-content">
+            <h3>Mid Rise Apartments</h3>
+            <p>Naawi Oodenas 3 to 6 storey mid rise apartments deliver 30 60 units per acre, these include studio apartments aswell as 2 and 3bedroom layouts and dedicated accessible or affordable homes. They are Situated alongside walking trails, community spaces, and transit stops, these apartments anchor a vibrant, walkable neighbourhood.
+            </p>
+          </div>
+        </article>
+
+        <article class="buildings-gon-built"> <!--this is the same as the first article but with differetn content-->
+          <img src="images/small-townhomes.png" alt="This is an image of naawi oodenas attached townhomes, that feature a sidewalk and street in the front">
+          <div class="building-content">
+            <h3>Suburban Townhomes</h3>
+            <p>Naawi Oodenas 2-3 storey townhomes face tranquil lanes and mews, with 10 18 homes per acre. Each has a separate front entrance and porch, with parking inconspicuously located in back, accessed by shared alleys. </p>
+          </div>
+        </article>
+
+        <article class="buildings-gon-built"> <!--same thing here -->
+          <img src="images/lux-living.png" alt="This is a image of naawi oodenas Larger single family detached homes on the short of a lake">
+          <div class="building-content">
+            <h3>Luxury Homes</h3>
+            <p>Spacious single and semi detached homes line Naawi Oodenas western edge at 10 to 18units per acre. Capped at 3.5storeys (12m), each home has side or rearlocated driveways and garages, with  Wide windows, porches, and treelined streets. </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="interior"> <!--this is a video (totally didnt take this ideo from abhi)-->
+      <video aria-label="this is a video shocasing the interior of a house located in naawi-oodena" autoplay muted loop playsinline> <!--shows the interior of a house in a video-->
+        <source src="images/interior.mp4" type="video/mp4" />
+        
+      </video>
+    </section>
+
+    
+    <section> <!--this is th esection for comerical and mixed use buldings-->
+      <h2>Commercial Mixed-Use</h2>
+      <p class="section-description">
+        Comercial And Mixed use locations for services and gathering for the community
+      </p>
+
+      <div class="building-grid"> <!--this is basically the same as the grid above with different content-->
+        <article class="buildings-gon-built">
+          <img src="images/retail.png" alt="Retail buildings">
+          <div class="building-content">
+            <h3>Retail</h3>
+            <p>Along Grant Avenue and Kenaston Boulevard, Naawi'Oodena's commercial shops include grocery stores, cafés, and restaurants from TimHortons and PizzaPizza to Shoppers Drug Mart offering everyday convenience to residents and essential needs a short walk or drive away.</p>
+            
+          </div>
+        </article>
+
+        <article class="buildings-gon-built">
+          <img src="images/commercial community.png" alt="This is an image of a community Courtyard In Naawi Oodena"">
+          <div class="building-content">
+            <h3>Community Courtyards</h3>
+            <p>These courtyards House Local Shops and Bakeries aswell as places to gather for the community</p>
+            <p>Features Art Installations From Local Artist in various mediums allowing for community bonding</p>
+          </div>
+        </article>
+
+
+        <article class="buildings-gon-built">
+          <img src="images/mixed-use-buildings.png" alt="this is an image of mixed use buildings that have both shops at the bottom and living space at the top located in naawi oodena">
+          <div class="building-content">
+            <h3>Mixed Use Buildings</h3>
+            <p> Naawi-Oodena's Include Residential Space Aswell as Smaller Shops, These Buildings Build On the sense Of community while saving space, places living space at the top with local every day need shops on the street level</p>
+            
+          </div>
+        </article>
+      </div>
+
+      <section id="interior"> <!--lol this is another video -->
+        <video aria-label="This is a video Showcasing one of the cultural meusuems in naawi-oodena"  autoplay muted loop > <!--makes the video play on loop, makes it auto play and make sure teh audio is muted-->
+          <source src="images/art.mp4" />
+          
+        </video>
+      </section>
+    </section>
+
+
+    
+    <section> <!--this is the section for mixed use village-->
+      <h2>Mixed-Use Village</h2>
+      <p class="section-description">
+        Showcases Naawi Oodenas Unique Mordern Vilage Style Design
+      </p>
+
+      <div class="building-grid"> <!--again the same thing but with different info-->
+        <article class="buildings-gon-built">
+          <img src="images/aerial-view.png" alt=" this image is an aerial view of  naawi oodenas village style neighborhood">
+          <div class="building-content">
+            <h3>Everything you need at a walking distance</h3>
+            <p>Everything Naawi Oodena residents need on a daily basis is just a short walk from home.
+              At the heart of the community on Grant Avenue are grocery stores,
+              cafes, restaurant and street-level publicly accessible plazas, with homes above.
+              From this hub, housing steps down from mid rise apartments to townhouses and, finally, to bigger homes and parks on the edges.
+              This design keeps shops and services close to access.</p>
+        </article>
+
+        <article class="buildings-gon-built">
+          <img src="images/layout.webp" alt=" this image is the drawing of the layout of the naawi-oodena">
+          <div class="building-content">
+            <h3>Map Of Naawi-Oodena Layout</h3>
+            <p>Naawi-Oodena Is structured around A ring road &#40;like perimeter highway&#41;This model Situates higher density Locations such as Retail and comercial use at the center and Bigger houses and parks on the outskirts of the Community.
+              This enables for better accesibility to the major amenities while keeping a spacious village like design.</p>
+            
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+<!--EVERYTHING UNDER HERE WAS ALREADY EXPLAINED IN INDEX.HTML-->
+  <footer>
+    &copy; 2025 Nihal - All rights reserved, Images used on this website were generated using ChatGPT.  All Videos are royalty free Were Sourced From <a class="donwload" href="https://www.pexels.com/">Pexels.  </a>  All Info Displayed was Sourced From <a class="donwload" href="Kapyong-Barracks-Master-Plan.pdf" download="Kapyong-Barracks-Master-Plan.pdf">Kapyong Barracks Master Plan Pdf</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger-menu'); 
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => navMenu.classList.toggle('show'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naawi-Oodena</title>
+  <link rel="stylesheet" href="bro.css" />
+  <style>
+
+
+
+  .la-form {
+    max-width: 50rem; /* here we are basically just setting a max width to the form and some padding plus margin, we are also aligning the text to the center, roundinfg the edges and setting the color*/
+    margin: 6rem auto;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 4px solid var(--green-background);
+    border-radius: 1rem;
+  }
+
+  .la-form h2 { /* again just setting basic styles wiht font size and margin bottom*/
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+ 
+  .la-form p { /* same thing as before*/
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-form {
+    display: -webkit-box; /* makes the contact form a flexbox and sets the direction to column so that its a column instead of the defauklt row, also adding so gam between the stuff inside*/
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-form input, /*this is basically targetting the things inside the form, idk why but the text area was tryna be nonchalant n try to be a different font so I jus set that */
+  .contact-form textarea, /* the rest is just transitions*/
+  .contact-form button {
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .contact-form input,  /* here we are basically setting the width to be 100% of the contact form, adding sum padding, removing the default border that comes with these elements*/
+  .contact-form textarea { /* rounding the edges, setting the colors, aligning the text to the center and adjusting the font size */
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--green-background);
+    color: var(--text-color);
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .contact-form input::placeholder, /* idk why but the place holders werent taking the color THAT I CLEARLY DEFINED UNDER HTML {} so I just added another layer of it so seal the color*/
+  .contact-form textarea::placeholder {
+    color: var(--text-color);
+    text-align: left;
+  }
+
+
+
+  .contact-form button {  /*we setting the width of the submit button to 60%*/
+    width: 60%;
+    margin: 2rem auto; /* then adding some margin and padding*/
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem; /* removing that unnesessary border and rounding the edges*/
+    background-color: var(--text-color);
+    color: var(--main-background);
+    font-size: 1.25rem; /* setting colors, and font size, */
+    cursor: pointer;
+  }
+
+  .contact-form button:hover { /* basically we changing the colors and making the button grow a bit when u hover and make it so that ur cursor becomes a pointer when u hover*/
+    background-color: var(--green-background);
+    color: var(--text-color);
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+
+  label {
+    text-align: left;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content"> <!--THE header is the same as all the pages, was explained in index.html-->
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="this the the logo of naawi-oodena"></a>
+        <h1><a href="index.html" class="main-heading">Naawi-Oodena</a></h1>
+      </div>
+      <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="residential-comericial.html">Residential/Comercial</a></li>
+          <li><a href="what-we-offer.html">What We Offer</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main> <!--this webpage basically has the contact form-->
+    <div class="la-form">
+      <h2>Contact Us</h2> <!--explains the form-->
+      <p>If You have Quetions, You Can Ask Us below.</p>
+      <form class="contact-form"> <!--this is the form-->
+        <label for="name">Enter Your Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Eg: Nihal Mrahar" required /><!--makes the input type a text box, makes the plave hplder to be enter ur full name and email adress and makes it rquired to submit the form-->
+        <label for="email">Enter Your Email Adress</label>
+        <input type="email" id="email" name="email" placeholder=" Eg: user@naawi-oodena.com" required />
+        <label for="message">Enter Your Message</label>
+        <textarea id="message" name="message" placeholder=" Eg: SGA, PGA, MLA, Okc in 5" required></textarea> <!--this is where u type in ur message-->
+        <button type="submit">Send</button> <!--this is th ebutton to submit the form-->
+      </form>
+    </div>
+  </main>
+  <!--everything else is the same-->
+  <footer>
+    &copy; 2025 Nihal - All rights reserved, Images used on this website were generated using ChatGPT. All Info Displayed was Sourced From <a class="donwload" href="Kapyong-Barracks-Master-Plan.pdf" download="Kapyong-Barracks-Master-Plan.pdf">Kapyong Barracks Master Plan Pdf</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => navMenu.classList.toggle('show'));
+  </script>
+</body>
+</html>
