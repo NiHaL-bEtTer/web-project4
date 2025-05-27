@@ -145,120 +145,98 @@ section {
 
 h2 {
     font-size: clamp(1.5rem, 2rem, 2.5rem); /* this is a very tuff feature I found, basically makes 3 different values for h2 based on the meeded size for differnt screen sizes */
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* again just aadding some madding, making it a flex box and alighing to center*/
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* using rgba to make a black semi transparent background*/
     padding: 0.5rem 1rem;
-    border-radius: 0.75rem;
+    border-radius: 0.75rem;  /* adding some padding and giving a a slight border raduis*/
     
 }
 p {
-    max-width: 50rem;
-    margin: 0 auto 2rem;
-    line-height: 1.6;
+    
+    margin: 0 auto 2rem;  /* this is again setting some basic margin, and setting some padding and the same border raduis as the h2*/
     padding: 0.5rem 1rem;
     border-radius: 0.75rem;
     
     
 }
 .learn-more-button {
-    position: relative;
-    padding: 0.75rem 1.5rem;
-    border: 0.3125rem solid #061B0A;
-    border-radius: 3.125rem;
-    overflow: hidden;
-    background: transparent;
-    color: var(--text-color);
-    cursor: pointer;
-    -webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
+    
+    padding: 0.75rem 1.5rem; /* adds more padding basic and mentioned before*/
+    border: 0.3rem solid #061B0A;  /* makes the border a dark green and gives it a border raduis so its rounded*/
+    border-radius: 3rem;
+    cursor: pointer; /* makes ur cursor a pointer when u go over it*/
+
 }
 
-#community {
+#community { /*gives the community section a background image, makes it so the image is in the center, it is object fit cover and the image is fixed so it doesnt move when u scroll*/
     background: url('images/community-center.png')
     center/cover fixed;
 }
 
-#community p {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0.5rem 1rem;
-    border-radius: 0.75rem;
-    max-width: 43.75rem;
-    line-height: 1.5;
-}
 
-/* Parks (#park) */
-#park {
+#park { /*gives the park section a background image, makes it so the image is in the center, it is object fit cover and the image is fixed so it doesnt move when u scroll*/
     background: url('images/main-park-image.png')
     center/cover fixed;
 }
 
 
 
-/* Footer */
-footer {
+
+footer {  /* aligns the text of the footer to the center, adds padding, gives the footer a border on the top for aesthetic purposes */
     text-align: center;
     padding: 2rem 1rem;
-    background-size: cover;
-    color: var(--text-color);
     border-top: 15px solid #061B0A;
 }
 
-/* === HAMBURGER & DROPDOWN === */
-.hamburger-menu {
+
+.hamburger-menu {  /* positions he menu to be absolute, and gives it a right value so its on the right, and a top so its not attached to the top*/
     position: absolute;
     right: 1rem;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    font-size: 1.75rem;
-    background: none;
-    border: none;
-    color: var(--text-color);
+    top: 0.7rem;
+    font-size: 1.75rem; /*cuz we used an entity for how the menu looks, i increase the font size to make it bigger*/
+    background: none; /* makes it so it doesnt have any background*/
+    border: none; /* makes it so it doesnt have any border that may come with any*/
+    color: var(--text-color); /* makes the color of it to be the same as the text color*/
     cursor: pointer;
-    z-index: 200;
+    z-index: 200; /* high z index so it appears above things*/
 }
 
 #nav-menu {
-    position: absolute;
+    position: absolute; /* makes it positioned absolute, makes the top of it to be the same as the height of the nav bar so its under it and */
     top: var(--nav-h);
-    left: 0;
-    width: 100%;
+    width: 100%; /* makes it take up 100% of the width*/
     background: linear-gradient(
-    to bottom,
+    to bottom, /* makes the background a linear gradient that is semi transparent with the help of rgba*/
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.9)
     );
-    max-height: 0;
-    -webkit-transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
-    background 0.3s ease;
-    transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s ease;
-    z-index: 150;
+    max-height: 0; /* sets the default max height to 0, so its doesnt show*/
+    z-index: 150; /* rounds the corners and gives it a high enough z index*/
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    width: 100%;
+    
 }
 
-#nav-menu.show {
+#nav-menu.show { 
     max-height: 25rem;
-    pointer-events: auto;
+    /* sets the max height to not 0 , so when we click it it apeears*/
 }
 
-#nav-menu ul {
+#nav-menu ul {  /* makes the ul a flexbox and removes all list styles that come iwth ul*/
     list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
+    -ms-flex-direction: column; /* makes the direction of the ul to be a column*/
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0;
+    gap: 1rem; /* adds gap between the different list items*/
+    padding: 1rem 0; /* adds some padding, removes any margin and sets the default opacity to with a opacity transition, (opacity is changed when .show)*/
     margin: 0;
     opacity: 0;
     -webkit-transition: opacity 0.4s ease-out 0.1s;
@@ -266,81 +244,79 @@ footer {
 }
 
 #nav-menu.show ul {
-    opacity: 1;
+    opacity: 1; /*makes the uls opacity 1 */
 }
 
 #nav-menu li {
-    text-align: center;
+    text-align: center; /* alignts the list item text to the center, adds some padding, and rounds the corners using the border raduis properity*/
     padding: 0.75rem 0;
     border-radius: 0.5rem;
-    -webkit-transition: background 0.3s ease;
+    -webkit-transition: background 0.3s ease; /* adds transtion to the background of the li as we will change the background on hover*/
     transition: background 0.3s ease;
 }
 #nav-menu li:hover {
-    background: rgba(6, 26, 10, 0.99);
+    background: rgba(6, 26, 10, 0.99); /*gives the li a background with the following backgrounf*/
 }
 
-#nav-menu a {
+#nav-menu a {  /*bolds the text of all the anchors inside the nav-menu*/
     font-weight: bold;
-    font-size: 1rem;
+    
 }
 
-#interior {
+#interior { /* makes it a flexbox, centers everything, vertically and horizontally, hides the overflow and gives it a height*/
     height: 40rem;
     overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 0 1rem;
-}
-
-.section-description {
-    text-align: center;
-    max-width: 50rem;
-    margin: 0 auto 2rem;
-    font-size: 1.125rem;
-}
-
-.section-type-1 {
-    position: relative;
-    overflow: hidden;
-    height: 80vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    justify-content: center;
-    color: #fff;
+    padding: 0 1rem; /* adds some padding*/
+}
+
+.section-description { /* aligns the text to the center and sets the margin and gives it a larger font size */
     text-align: center;
+   
+    margin: 0 auto 2rem;
+    font-size: 1.2rem;
+}
+
+.section-type-1 { /*the styles for the first type of section in the webpage*/
+    overflow: hidden; /*hides all overflow*/
+    height: 80vh; /*sets a height for this type of section*/
+    display: -webkit-box; /*makes this section a flex box*/
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center; /*aligns the stuff to center both horizontally and vertically*/
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* aligns all the text to the center and adds some padding*/
     padding: 0 1rem;
 }
 
-.section-type-1 h1 {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem 2rem;
-    border-radius: 1.25rem;
-    font-size: clamp(1.5rem, 4vw, 3rem);
+.section-type-1 h1 { 
+    background: rgba(0, 0, 0, 0.8); /*makes the background a semi tranparent black color*/
+    padding: 1rem 2rem; /*adds some padding*/
+    border-radius: 1.25rem; /* rounds the h1*/
+    font-size: clamp(1.5rem, 4vw, 3rem); /*this is the cool feature I already talked about that lets u set different sizes*/
     -webkit-animation: fadeUp 1s ease-out forwards .5s;
-    animation: fadeUp 1s ease-out forwards .5s;
-    opacity: 0;
+    animation: fadeUp 1s ease-out forwards .5s; /*this calles the animation I created*/
+    opacity: 0; 
     -webkit-transform: translateY(1.25rem);
-    -ms-transform: translateY(1.25rem);
+    -ms-transform: translateY(1.25rem); /* translates the thing up 1.25 rem*/
     transform: translateY(1.25rem);
 }
 
-.section-type-2 {
+.section-type-2 { /*adds some padding and aligns the text to the center*/
     padding: 4rem 1rem;
     text-align: center;
 }
 
-.donwload {
+.donwload { /*this is for the kapyong barracks download, bolds it so it can be distinguished*/
     font-weight: bold;
 }
